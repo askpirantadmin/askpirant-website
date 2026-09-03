@@ -62,3 +62,53 @@
   .legal{font-size:9px;line-height:1.6}
   .legal span{margin-left:0;width:100%}
 }
+
+/* ===== MOBILE SERVICE CARD FIX =====
+   Prevents service descriptions from overlapping the titles on small screens. */
+@media (max-width: 850px){
+  .services-grid{grid-template-columns:1fr;}
+  .service{
+    min-height:390px;
+    padding:29px;
+    display:flex;
+    flex-direction:column;
+  }
+  .service h3{
+    margin-top:78px;
+    margin-bottom:0;
+    font-size:38px;
+    line-height:1.02;
+  }
+  .service p,
+  .featured p{
+    position:static;
+    max-width:100%;
+    margin:18px 0 0;
+    font-size:14px;
+    line-height:1.65;
+  }
+  .service a{
+    position:static;
+    margin-top:auto;
+    padding-top:28px;
+    font-size:12px;
+  }
+}
+
+@media (max-width:500px){
+  .service{
+    min-height:370px;
+    padding:25px;
+  }
+  .service h3{
+    margin-top:72px;
+    font-size:36px;
+  }
+  .service p,
+  .featured p{
+    margin-top:16px;
+    font-size:14px;
+    line-height:1.65;
+  }
+  .service a{padding-top:24px;}
+}
