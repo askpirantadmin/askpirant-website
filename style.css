@@ -147,3 +147,56 @@
   .feedback-row{grid-template-columns:1fr}
   .feedback-form .btn{width:100%;justify-content:center}
 }
+
+
+/* ===== FINAL FEEDBACK + CONTACT POLISH ===== */
+.feedback-box{background:linear-gradient(135deg,#c6a332 0%,#d8b94d 100%);border:1px solid #e0c45d;color:#111;border-radius:2px;box-shadow:0 18px 45px rgba(0,0,0,.12)}
+.feedback-box .eyebrow,.feedback-box h3,.feedback-box p{color:#111}
+.feedback-box input,.feedback-box textarea{background:rgba(255,255,255,.92);border:1px solid rgba(0,0,0,.16);color:#111}
+.feedback-box input::placeholder,.feedback-box textarea::placeholder{color:#666}
+.feedback-box .btn{background:#111;color:#fff;border-color:#111}
+.feedback-box .btn:hover{background:#222}
+.contact-info{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin-top:30px}
+.contact-col{display:flex;flex-direction:column;gap:8px}
+.contact-label{font-size:10px;text-transform:uppercase;letter-spacing:1.5px;color:#8d7422;font-weight:800;margin-bottom:3px}
+.contact-col a{font-size:14px;font-weight:700}
+@media(max-width:700px){.contact-info{grid-template-columns:1fr;gap:20px}.feedback-box{background:linear-gradient(145deg,#c6a332,#d8b94d)}}
+
+
+/* ===== FINAL CLIENT FEEDBACK + ENQUIRY POLISH ===== */
+.reviews{background:#c6a332;color:#171717}
+.reviews .section-head h2{color:#171717}
+.reviews .section-head h2 span{color:#fff}
+.reviews .section-head .eyebrow{color:#171717}
+.reviews .section-head>p{color:#3d3520}
+.review-card{background:#fffdf8;border-color:#e6dcc0;box-shadow:0 18px 50px rgba(40,30,10,.12)}
+.review-source{color:#51451e}
+.stars{color:#b08c1d}
+.review-person strong{color:#171717}
+.review-person span{color:#716b5b}
+.review-arrow{background:#171717;color:#fff;border-color:#171717}
+.review-arrow:hover{background:#fff;color:#171717}
+.review-dots .dot{border-color:#171717}
+.review-dots .dot.active{background:#171717}
+.feedback-box{background:#fffdf8;border:1px solid rgba(23,23,23,.16);box-shadow:0 20px 55px rgba(40,30,10,.12)}
+.feedback-copy .eyebrow{color:#8a6d12}
+.feedback-copy h3{color:#171717}
+.feedback-copy p{color:#625b4b}
+.feedback-form label{color:#51451e}
+.feedback-form input,.feedback-form textarea{color:#171717;border-color:#cfc5aa;background:transparent}
+.feedback-form input::placeholder,.feedback-form textarea::placeholder{color:#8a8373}
+.feedback-form input:focus,.feedback-form textarea:focus{border-color:#a77f0d}
+.feedback-form .btn-dark{background:#171717;color:#fff;border-color:#171717}
+
+@media(max-width:850px){
+  .reviews{padding-bottom:75px}
+  .review-wrap{grid-template-columns:42px 1fr 42px;gap:10px}
+  .feedback-box{grid-template-columns:1fr;gap:28px;padding:28px 24px}
+}
+@media(max-width:500px){
+  .reviews .section-head h2{font-size:38px}
+  .review-card{padding:24px 22px;min-height:330px}
+  .review-wrap{grid-template-columns:34px 1fr 34px;gap:7px}
+  .review-arrow{width:34px;height:34px}
+  .feedback-box{padding:24px 18px;margin-top:42px}
+}
