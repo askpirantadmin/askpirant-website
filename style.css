@@ -301,3 +301,47 @@
     min-height:390px!important;
   }
 }
+
+/* ===== SERVICE DETAIL PAGES ===== */
+.service-page{background:#0b0b0b;color:#f4f1ea}
+.service-hero{padding:100px 0 90px;border-bottom:1px solid #292929}
+.service-hero .eyebrow{color:#c6a332}
+.service-hero-grid{display:grid;grid-template-columns:1.25fr .75fr;gap:70px;align-items:end}
+.service-hero h1{font-family:"Playfair Display",serif;font-size:clamp(58px,8vw,118px);line-height:.9;letter-spacing:-3px;margin:22px 0 28px}
+.service-hero h1 span{color:#c6a332}
+.service-lead{max-width:720px;font-size:20px;line-height:1.65;color:#aaa}
+.service-index{font-size:14px;color:#aaa;letter-spacing:2px;text-transform:uppercase;text-align:right}
+.service-index strong{display:block;font-size:64px;line-height:1;color:#c6a332;letter-spacing:-2px}
+.service-section{padding:90px 0;border-bottom:1px solid #292929}
+.service-two{display:grid;grid-template-columns:.8fr 1.2fr;gap:80px}
+.service-section h2{font-family:"Playfair Display",serif;font-size:clamp(42px,5vw,72px);line-height:.98;margin:0;letter-spacing:-1.5px}
+.service-section h2 span{color:#c6a332}
+.service-section p{font-size:17px;line-height:1.8;color:#aaa}
+.service-list{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:#292929;border:1px solid #292929;margin-top:45px}
+.service-list div{background:#0b0b0b;padding:28px;min-height:150px}
+.service-list b{display:block;color:#c6a332;font-size:13px;letter-spacing:1.5px;margin-bottom:16px}
+.service-list p{margin:0;font-size:15px}
+.service-deliverables{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin-top:42px}
+.service-deliverable{border:1px solid #303030;padding:28px;transition:.2s}
+.service-deliverable:hover{border-color:#c6a332;transform:translateY(-2px)}
+.service-deliverable span{color:#c6a332;font-size:12px;letter-spacing:1.5px}
+.service-deliverable h3{font-family:"Playfair Display",serif;font-size:25px;margin:14px 0 0}
+.service-steps{display:grid;grid-template-columns:repeat(5,1fr);gap:1px;background:#292929;border:1px solid #292929;margin-top:45px}
+.service-step{background:#0b0b0b;padding:28px;min-height:190px}
+.service-step .num{color:#c6a332;font-weight:700}
+.service-step h3{margin:45px 0 10px;font-size:20px}
+.service-step p{font-size:14px;margin:0;line-height:1.6}
+.service-audience{background:#c6a332;color:#0b0b0b}
+.service-audience p{color:#2b2b2b}
+.service-cta{padding:100px 0;text-align:center}
+.service-cta h2{font-family:"Playfair Display",serif;font-size:clamp(48px,7vw,96px);line-height:.95;margin:0 0 30px}
+.service-cta h2 span{color:#c6a332}
+.service-cta p{max-width:620px;margin:0 auto 35px;color:#aaa;line-height:1.7}
+.service-back{display:inline-block;color:#aaa;margin-top:25px;font-size:14px}
+.service-page .nav-wrap{background:#f4f1ea}
+.service-page .nav a{color:#111}
+.service-page .nav-cta{border-color:#111}
+@media(max-width:850px){
+ .service-hero{padding:70px 0 60px}.service-hero-grid,.service-two{grid-template-columns:1fr;gap:35px}.service-index{text-align:left}.service-index strong{font-size:48px}.service-section{padding:65px 0}.service-list,.service-deliverables{grid-template-columns:1fr}.service-steps{grid-template-columns:1fr}.service-step{min-height:auto}.service-step h3{margin-top:25px}.service-cta{padding:70px 0}
+}
+@media(max-width:500px){.service-hero h1{font-size:54px;letter-spacing:-2px}.service-lead{font-size:17px}.service-section h2{font-size:42px}.service-list div,.service-deliverable,.service-step{padding:22px}}
