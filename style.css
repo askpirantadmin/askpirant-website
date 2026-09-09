@@ -345,3 +345,58 @@
  .service-hero{padding:70px 0 60px}.service-hero-grid,.service-two{grid-template-columns:1fr;gap:35px}.service-index{text-align:left}.service-index strong{font-size:48px}.service-section{padding:65px 0}.service-list,.service-deliverables{grid-template-columns:1fr}.service-steps{grid-template-columns:1fr}.service-step{min-height:auto}.service-step h3{margin-top:25px}.service-cta{padding:70px 0}
 }
 @media(max-width:500px){.service-hero h1{font-size:54px;letter-spacing:-2px}.service-lead{font-size:17px}.service-section h2{font-size:42px}.service-list div,.service-deliverable,.service-step{padding:22px}}
+
+/* ===== SERVICE DETAIL TYPOGRAPHY — SLIGHTLY SMALLER ===== */
+.service-hero h1{font-size:clamp(50px,6.6vw,94px);line-height:.92}
+.service-lead{font-size:18px}
+.service-section h2{font-size:clamp(38px,4.5vw,62px)}
+.service-section p{font-size:15.5px}
+.service-list p{font-size:14px}
+.service-deliverable h3{font-size:22px}
+.service-step h3{font-size:18px}
+.service-step p{font-size:13px}
+.service-cta h2{font-size:clamp(44px,6vw,82px)}
+@media(max-width:850px){
+ .service-hero h1{font-size:58px}
+ .service-section h2{font-size:42px}
+}
+@media(max-width:500px){
+ .service-hero h1{font-size:46px;letter-spacing:-1.5px}
+ .service-lead{font-size:16px}
+ .service-section h2{font-size:36px}
+ .service-section p{font-size:15px}
+ .service-list p{font-size:13.5px}
+ .service-deliverable h3{font-size:20px}
+ .service-step h3{font-size:17px}
+ .service-step p{font-size:13px}
+ .service-cta h2{font-size:46px}
+}
+
+/* ===== FINAL SERVICE PAGE TYPE SCALE ===== */
+.service-hero{padding:72px 0 64px}
+.service-hero h1{font-size:68px;line-height:.94;letter-spacing:-2px;margin:18px 0 22px}
+.service-lead{font-size:17px;line-height:1.6}
+.service-index strong{font-size:52px}
+.service-section{padding:72px 0}
+.service-section h2{font-size:48px;line-height:1}
+.service-section p{font-size:15px;line-height:1.7}
+.service-cta{padding:78px 0}
+.service-cta h2{font-size:62px;line-height:.98}
+@media(max-width:850px){
+  .service-hero{padding:58px 0 50px}
+  .service-hero h1{font-size:52px;letter-spacing:-1.5px}
+  .service-section{padding:58px 0}
+  .service-section h2{font-size:40px}
+  .service-cta{padding:62px 0}
+  .service-cta h2{font-size:52px}
+}
+@media(max-width:500px){
+  .service-hero{padding:48px 0 42px}
+  .service-hero h1{font-size:40px;letter-spacing:-1px}
+  .service-lead{font-size:15px}
+  .service-section{padding:48px 0}
+  .service-section h2{font-size:34px}
+  .service-section p{font-size:14px}
+  .service-cta{padding:54px 0}
+  .service-cta h2{font-size:40px}
+}
