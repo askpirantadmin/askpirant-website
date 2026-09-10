@@ -400,3 +400,31 @@
   .service-cta{padding:54px 0}
   .service-cta h2{font-size:40px}
 }
+
+/* ===== SERVICE DETAIL PAGES — LIGHT / WHITE THEME ===== */
+.service-page{background:#fff;color:#111}
+.service-page .service-hero,
+.service-page .service-section,
+.service-page .service-cta{background:#fff;color:#111}
+.service-page .service-section{border-bottom:1px solid #e5e2db}
+.service-page .service-hero h1,
+.service-page .service-section h2,
+.service-page .service-cta h2{color:#111}
+.service-page .service-lead,
+.service-page .service-section p,
+.service-page .service-cta p{color:#66635d}
+.service-page .service-list,
+.service-page .service-steps{background:#ddd9d0;border-color:#ddd9d0}
+.service-page .service-list div,
+.service-page .service-step{background:#fff;color:#111}
+.service-page .service-list div{border:0}
+.service-page .service-deliverable{background:#fff;border-color:#ddd9d0}
+.service-page .service-deliverable:hover{border-color:#c6a332}
+.service-page .service-deliverable h3,
+.service-page .service-step h3{color:#111}
+.service-page .service-step p{color:#66635d}
+.service-page .service-audience{background:#fff;color:#111}
+.service-page .service-audience p{color:#66635d}
+.service-page .service-cta{border-top:1px solid #e5e2db}
+.service-page .service-back{color:#66635d}
+.service-page .service-back:hover{color:#a98212}
