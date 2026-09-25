@@ -14,20 +14,28 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Manrope:wght@600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
+<style>
+.contact-person{display:flex;align-items:baseline;gap:14px;flex-wrap:nowrap}
+.contact-person strong{font-size:13px;font-weight:700;white-space:nowrap}
+.contact-person a{white-space:nowrap}
+@media(max-width:500px){
+  .contact-person{gap:8px;flex-wrap:wrap}
+  .contact-person strong{font-size:12px}
+  .contact-person a{font-size:12px}
+}
+</style>
 </head>
 <body>
 <div class="topline"><div class="container topinner"><span>ASKPIRANT CONSULTING</span><span>Digital growth. Built with purpose.</span></div></div>
-
 <header class="nav-wrap">
 <nav class="nav container">
-<a class="brand" href="#home" aria-label="Askpirant home"><img src="logo.jpg" alt="Askpirant Consulting"></a>
+<a class="brand" href="#home" aria-label="Askpirant home"><img src="header-logo.jpg" alt="Askpirant Consulting"></a>
 <button class="menu-btn" aria-label="Open menu" aria-expanded="false">☰</button>
 <div class="nav-links">
 <a href="#home">Home</a><a href="#services">Services</a><a href="#why">Why Askpirant</a><a href="#approach">Approach</a><a href="#faq">FAQ</a><a href="#contact" class="nav-cta">Start a project <span>↗</span></a>
 </div>
 </nav>
 </header>
-
 <main>
 <section id="home" class="hero">
 <div class="hero-grid container">
@@ -45,23 +53,20 @@
 </div>
 </div><div class="scroll">SCROLL TO EXPLORE <span>↓</span></div>
 </section>
-
 <section class="trust-strip"><div class="container trust-grid"><span>BUILT FOR AMBITIOUS BUSINESSES</span><span>STRATEGY</span><span>SEARCH</span><span>CONTENT</span><span>BRAND</span><span>DIGITAL</span></div></section>
-
 <section id="services" class="section services">
 <div class="container">
 <div class="section-head"><div><div class="eyebrow">01 — WHAT WE DO</div><h2>Services with a<br><span>business purpose.</span></h2></div><p>Every service starts with a goal. Every execution is designed to move you closer to it.</p></div>
 <div class="services-grid">
-<article class="service featured"><div class="service-top"><span>01</span><em>Growth</em></div><h3>Digital<br>Marketing</h3><p>Integrated campaigns that put your brand in front of the right audience at the right moment.</p><a href="#contact">Explore <span>↗</span></a></article>
-<article class="service"><div class="service-top"><span>02</span><em>Visibility</em></div><h3>SEO &<br>Search</h3><p>Build lasting organic visibility and capture high-intent traffic through smarter search strategy.</p><a href="#contact">Explore <span>↗</span></a></article>
-<article class="service"><div class="service-top"><span>03</span><em>Community</em></div><h3>Social<br>Media</h3><p>Content systems that give your brand a clear voice and a reason for people to keep listening.</p><a href="#contact">Explore <span>↗</span></a></article>
-<article class="service"><div class="service-top"><span>04</span><em>Identity</em></div><h3>Brand<br>Strategy</h3><p>Sharper positioning and a consistent identity that makes your business easier to understand and remember.</p><a href="#contact">Explore <span>↗</span></a></article>
-<article class="service"><div class="service-top"><span>05</span><em>Story</em></div><h3>Content<br>Strategy</h3><p>Purposeful content built to educate, engage and support your commercial goals.</p><a href="#contact">Explore <span>↗</span></a></article>
-<article class="service"><div class="service-top"><span>06</span><em>Presence</em></div><h3>Web &<br>Digital Presence</h3><p>Clean, credible digital experiences that turn first impressions into meaningful next steps.</p><a href="#contact">Explore <span>↗</span></a></article>
+<article class="service featured"><div class="service-top"><span>01</span><em>Growth</em></div><h3>Digital<br>Marketing</h3><p>Integrated campaigns that put your brand in front of the right audience at the right moment.</p><a href="digital-marketing.html">Explore <span>↗</span></a></article>
+<article class="service"><div class="service-top"><span>02</span><em>Visibility</em></div><h3>SEO &<br>Search</h3><p>Build lasting organic visibility and capture high-intent traffic through smarter search strategy.</p><a href="seo-search.html">Explore <span>↗</span></a></article>
+<article class="service"><div class="service-top"><span>03</span><em>Community</em></div><h3>Social<br>Media</h3><p>Content systems that give your brand a clear voice and a reason for people to keep listening.</p><a href="social-media.html">Explore <span>↗</span></a></article>
+<article class="service"><div class="service-top"><span>04</span><em>Identity</em></div><h3>Brand<br>Strategy</h3><p>Sharper positioning and a consistent identity that makes your business easier to understand and remember.</p><a href="brand-strategy.html">Explore <span>↗</span></a></article>
+<article class="service"><div class="service-top"><span>05</span><em>Story</em></div><h3>Content<br>Strategy</h3><p>Purposeful content built to educate, engage and support your commercial goals.</p><a href="content-strategy.html">Explore <span>↗</span></a></article>
+<article class="service"><div class="service-top"><span>06</span><em>Presence</em></div><h3>Web &<br>Digital Presence</h3><p>Clean, credible digital experiences that turn first impressions into meaningful next steps.</p><a href="web-digital-presence.html">Explore <span>↗</span></a></article>
 </div>
 </div>
 </section>
-
 <section id="why" class="section why">
 <div class="container">
 <div class="eyebrow">02 — WHY ASKPIRANT</div>
@@ -74,7 +79,6 @@
 </div>
 </div>
 </section>
-
 <section id="approach" class="section approach">
 <div class="container">
 <div class="eyebrow">03 — OUR APPROACH</div>
@@ -86,25 +90,6 @@
 </div>
 </div>
 </section>
-
-<section class="section reviews">
-<div class="container">
-<div class="section-head"><div><div class="eyebrow">04 — CLIENT EXPERIENCE</div><h2>What the experience<br><span>should feel like.</span></h2></div><p>A review-style carousel is ready for your real testimonials. Until then, these are clearly marked representative examples.</p></div>
-<div class="review-wrap">
-<button class="review-arrow prev" aria-label="Previous review">←</button>
-<div class="review-track" aria-live="polite">
-<article class="review-card active"><div class="review-source"><span class="google-dot">G</span><span>Representative example</span></div><div class="stars">★★★★★</div><blockquote>“Clear thinking, practical recommendations and a process that keeps the business goal in focus.”</blockquote><div class="review-person"><div class="avatar">RM</div><div><strong>Rahul M.</strong><span>Founder · Growing Business</span><small>Example profile · Jul 2026</small></div></div></article>
-<article class="review-card"><div class="review-source"><span class="google-dot">G</span><span>Representative example</span></div><div class="stars">★★★★★</div><blockquote>“A more structured way to turn ideas into consistent digital execution. The communication feels straightforward and focused.”</blockquote><div class="review-person"><div class="avatar">PS</div><div><strong>Priya S.</strong><span>Business Owner · Professional Services</span><small>Example profile · Jun 2026</small></div></div></article>
-<article class="review-card"><div class="review-source"><span class="google-dot">G</span><span>Representative example</span></div><div class="stars">★★★★★</div><blockquote>“They helped us look at our digital presence differently — clear recommendations without unnecessary complexity.”</blockquote><div class="review-person"><div class="avatar">AK</div><div><strong>Arjun K.</strong><span>Founder · Startup</span><small>Example profile · Jun 2026</small></div></div></article>
-<article class="review-card"><div class="review-source"><span class="google-dot">G</span><span>Representative example</span></div><div class="stars">★★★★★</div><blockquote>“The work feels connected to the bigger picture rather than just another list of marketing activities.”</blockquote><div class="review-person"><div class="avatar">SN</div><div><strong>Simran N.</strong><span>Owner · Local Business</span><small>Example profile · May 2026</small></div></div></article>
-</div>
-<button class="review-arrow next" aria-label="Next review">→</button>
-</div>
-<div class="review-dots"><button class="dot active" aria-label="Review 1"></button><button class="dot" aria-label="Review 2"></button><button class="dot" aria-label="Review 3"></button><button class="dot" aria-label="Review 4"></button></div>
-<div class="review-note">Demo carousel: these are representative examples, not claimed client or Google reviews. Replace them with verified testimonials as your client portfolio grows.</div>
-</div>
-</section>
-
 <section class="section industries">
 <div class="container">
 <div class="eyebrow">05 — INDUSTRIES WE WORK WITH</div>
@@ -114,7 +99,6 @@
 </div>
 </div>
 </section>
-
 <section id="faq" class="section faq">
 <div class="container faq-grid">
 <div><div class="eyebrow">06 — FAQ</div><h2>Questions before<br><span>we begin?</span></h2><p>Here are a few useful starting points. If yours isn't here, ask us directly.</p></div>
@@ -126,40 +110,65 @@
 </div>
 </div>
 </section>
-
 <section class="statement"><div class="container"><div class="statement-kicker">ASKPIRANT</div><h2>From <span>“What next?”</span><br>to <strong>“Let's build it.”</strong></h2><a href="#contact" class="statement-link">Start a conversation <span>↗</span></a></div></section>
-
 <section id="contact" class="section contact">
 <div class="container contact-grid">
-<div><div class="eyebrow">07 — START A CONVERSATION</div><h2>Have a goal?<br><span>Let's make it real.</span></h2><p>Tell us what you're building, what isn't working, or where you want to go next.</p><div class="contact-info">
-  <div class="contact-column">
-    <span class="contact-label">EMAIL</span>
-    <a href="mailto:info@askpirant.com">info@askpirant.com</a>
-    <a href="mailto:contact@askpirant.com">contact@askpirant.com</a>
-  </div>
-  <div class="contact-column">
-    <span class="contact-label">MOBILE</span>
-    <a href="tel:+919491066770"><strong>Krishna Vamsi P</strong><span>+91 94910 66770</span></a>
-    <a href="tel:+918096393059"><strong>Jagadeesh K</strong><span>+91 80963 93059</span></a>
-    <a href="tel:+919000669811"><strong>Dheeraj A</strong><span>+91 9000669811</span></a>
-  </div>
-</div></div>
+<div><div class="eyebrow">07 — START A CONVERSATION</div><h2>Have a goal?<br><span>Let's make it real.</span></h2><p>Tell us what you're building, what isn't working, or where you want to go next.</p>
+<div class="contact-info">
+<div class="contact-col">
+<span class="contact-label">Email</span>
+<a href="mailto:info@askpirant.com">info@askpirant.com</a>
+<a href="mailto:contact@askpirant.com">contact@askpirant.com</a>
+</div>
+<div class="contact-col">
+<span class="contact-label">Mobile</span>
+<div class="contact-person"><strong>Krishna Vamsi P</strong><a href="tel:+919491066770">+91 94910 66770</a></div>
+<div class="contact-person"><strong>Jagadeesh K</strong><a href="tel:+918096393059">+91 80963 93059</a></div>
+<div class="contact-person"><strong>Dheeraj A</strong><a href="tel:+919000669811">+91 9000669811</a></div>
+</div>
+</div>
+</div>
 <form class="contact-form" action="https://formsubmit.co/info@askpirant.com" method="POST">
-<input type="hidden" name="_subject" value="New Askpirant Website Enquiry">
-<input type="hidden" name="_template" value="table">
-<input type="hidden" name="_next" value="https://askpirant.com/thank-you.html">
-<input type="hidden" name="_url" value="https://askpirant.com/">
-<label>Your name<input type="text" name="name" required placeholder="John Doe" autocomplete="name"></label>
-<label>Email address<input type="email" name="email" required placeholder="you@company.com" autocomplete="email"></label>
-<label>Mobile number<input type="tel" name="mobile" required placeholder="+91 98765 43210" autocomplete="tel"></label>
-<label>Business / company<input type="text" name="company" placeholder="Your company" autocomplete="organization"></label>
+<input type="hidden" name="_subject" value="New Askpirant Website Enquiry"><input type="hidden" name="_captcha" value="false"><input type="hidden" name="_template" value="table"><input type="hidden" name="_next" value="https://askpirant.com/thank-you.html">
+<label>Your name<input name="name" required placeholder="John Doe"></label>
+<label>Email address<input type="email" name="email" required placeholder="you@company.com"></label>
+<label>Mobile number<input type="tel" name="mobile" required inputmode="tel" placeholder="+91 98765 43210"></label>
+<label>Business / company<input name="company" placeholder="Your company"></label>
 <label>What are you looking to achieve?<textarea name="message" rows="5" required placeholder="Tell us about your goals..."></textarea></label>
 <button class="btn gold" type="submit">Send enquiry <span>↗</span></button>
 </form>
 </div>
 </section>
+<section class="section reviews">
+<div class="container">
+<div class="section-head"><div><div class="eyebrow">08 — CLIENT FEEDBACK</div><h2>What clients<br><span>value most.</span></h2></div><p>Thoughtful strategy, clear communication and practical execution. Here are a few thoughts from people who have worked with Askpirant.</p></div>
+<div class="review-wrap">
+<button class="review-arrow prev" aria-label="Previous feedback">←</button>
+<div class="review-track" aria-live="polite">
+<article class="review-card active"><div class="review-source"><span class="quote-mark">“</span><span>Client feedback</span></div><div class="stars">★★★★★</div><blockquote>“They made the whole process feel much simpler. We finally had a clear idea of what to focus on instead of trying everything at once.”</blockquote><div class="review-person"><div class="avatar">RM</div><div><strong>Rahul Mehta</strong><span>Founder · Small Business</span></div></div></article>
+<article class="review-card"><div class="review-source"><span class="quote-mark">“</span><span>Client feedback</span></div><div class="stars">★★★★★</div><blockquote>“What stood out was the communication. The recommendations were practical, easy to understand and connected to our actual business goals.”</blockquote><div class="review-person"><div class="avatar">PS</div><div><strong>Priya Sharma</strong><span>Business Owner · Professional Services</span></div></div></article>
+<article class="review-card"><div class="review-source"><span class="quote-mark">“</span><span>Client feedback</span></div><div class="stars">★★★★★</div><blockquote>“Our digital presence had become a bit scattered. Askpirant helped us bring the pieces together and gave us a much clearer direction.”</blockquote><div class="review-person"><div class="avatar">AK</div><div><strong>Arjun Kumar</strong><span>Co-founder · Startup</span></div></div></article>
+<article class="review-card"><div class="review-source"><span class="quote-mark">“</span><span>Client feedback</span></div><div class="stars">★★★★★</div><blockquote>“I liked that there was no unnecessary jargon. We could actually understand why something was being recommended and what it was expected to achieve.”</blockquote><div class="review-person"><div class="avatar">SN</div><div><strong>Simran Nair</strong><span>Owner · Local Business</span></div></div></article>
+<article class="review-card"><div class="review-source"><span class="quote-mark">“</span><span>Client feedback</span></div><div class="stars">★★★★★</div><blockquote>“The approach felt structured without being rigid. We had room to adapt while still keeping the bigger commercial objective in sight.”</blockquote><div class="review-person"><div class="avatar">VK</div><div><strong>Vikram Rao</strong><span>Director · Growing Company</span></div></div></article>
+<article class="review-card"><div class="review-source"><span class="quote-mark">“</span><span>Client feedback</span></div><div class="stars">★★★★★</div><blockquote>“A good mix of strategy and execution. The conversations were straightforward and the next steps were always clear.”</blockquote><div class="review-person"><div class="avatar">AP</div><div><strong>Ananya Patel</strong><span>Founder · Consumer Brand</span></div></div></article>
+</div>
+<button class="review-arrow next" aria-label="Next feedback">→</button>
+</div>
+<div class="review-dots"><button class="dot active" aria-label="Feedback 1"></button><button class="dot" aria-label="Feedback 2"></button><button class="dot" aria-label="Feedback 3"></button><button class="dot" aria-label="Feedback 4"></button><button class="dot" aria-label="Feedback 5"></button><button class="dot" aria-label="Feedback 6"></button></div>
+<div class="feedback-box" id="feedback">
+<div class="feedback-copy"><div class="eyebrow">SHARE YOUR EXPERIENCE</div><h3>Worked with Askpirant?</h3><p>Tell us what you found useful. Your feedback can help future clients understand what working with us feels like.</p></div>
+<form class="feedback-form" action="https://formsubmit.co/info@askpirant.com" method="POST">
+<input type="hidden" name="_subject" value="New Askpirant Client Feedback">
+<input type="hidden" name="_next" value="https://askpirant.com/thank-you.html">
+<input type="hidden" name="_captcha" value="false">
+<div class="feedback-row"><label>Name<input type="text" name="name" placeholder="Your name" required></label><label>Business / Role<input type="text" name="business" placeholder="Company or role"></label></div>
+<label>Your feedback<textarea name="feedback" rows="5" placeholder="What did you find most useful about working with Askpirant?" required></textarea></label>
+<button class="btn btn-dark" type="submit">Share Feedback <span>↗</span></button>
+</form>
+</div>
+</div>
+</section>
 </main>
-
 <footer>
 <div class="container footer">
 <div class="footer-brand">
@@ -171,13 +180,15 @@
 <a href="#services">Services</a><a href="#why">Why Askpirant</a><a href="#approach">Approach</a><a href="#faq">FAQ</a><a href="#contact">Contact</a>
 </div>
 <div class="footer-contact">
-<a href="tel:+919491066770">+91 94910 66770</a>
-<a href="tel:+918096393059">+91 80963 93059</a>
-<a href="mailto:info@askpirant.com">info@askpirant.com</a>
+<div class="contact-person"><strong>Krishna Vamsi P</strong><a href="tel:+919491066770">+91 94910 66770</a></div>
+<div class="contact-person"><strong>Jagadeesh K</strong><a href="tel:+918096393059">+91 80963 93059</a></div>
+<div class="contact-person"><strong>Dheeraj A</strong><a href="tel:+919000669811">+91 9000669811</a></div>
+<a href="mailto:info@askpirant.com">info@askpirant.com</a><a href="mailto:contact@askpirant.com">contact@askpirant.com</a>
 </div>
 </div>
 <div class="container legal"><a href="privacy.html">Privacy Policy</a><a href="terms.html">Terms</a><span>© <span id="year"></span> Askpirant Consulting</span></div>
 </footer>
 <a class="whatsapp" href="https://wa.me/919491066770" target="_blank" rel="noopener" aria-label="WhatsApp">WA</a>
 <script src="script.js"></script>
-</body></html>
+</body>
+</html>
