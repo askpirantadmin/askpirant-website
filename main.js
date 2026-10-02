@@ -1,13 +1,13 @@
 (()=>{
   document.documentElement.classList.add('js');
 
+  const $=s=>document.querySelector(s),
+        b=$('#burger'),
+        m=$('#menu');
+
   /* =========================
      NAVIGATION
   ========================= */
-
-  const $=s=>document.querySelector(s);
-  const b=$('#burger');
-  const m=$('#menu');
 
   const close=()=>{
     m.classList.remove('open');
@@ -17,12 +17,8 @@
 
   b.addEventListener('click',()=>{
     const o=m.classList.toggle('open');
-
     b.setAttribute('aria-expanded',o);
-    b.setAttribute(
-      'aria-label',
-      o ? 'Close menu' : 'Open menu'
-    );
+    b.setAttribute('aria-label',o?'Close menu':'Open menu');
   });
 
   m.addEventListener('click',e=>{
@@ -39,37 +35,33 @@
   ========================= */
 
   const io='IntersectionObserver' in window
-    ? new IntersectionObserver(
-        es=>es.forEach(e=>{
-          if(e.isIntersecting){
-            e.target.classList.add('in');
-            io.unobserve(e.target);
-          }
-        }),
-        {threshold:.12}
-      )
-    : null;
+    ?new IntersectionObserver(es=>es.forEach(e=>{
+        if(e.isIntersecting){
+          e.target.classList.add('in');
+          io.unobserve(e.target);
+        }
+      }),{threshold:.12})
+    :null;
 
-  document.querySelectorAll('.rv').forEach(el=>{
-    io ? io.observe(el) : el.classList.add('in');
-  });
+  document.querySelectorAll('.rv').forEach(el=>
+    io?io.observe(el):el.classList.add('in')
+  );
 
 
   /* =========================
      CONTACT FORM
   ========================= */
 
-  const f=$('#form');
-  const st=$('#status');
-  const sel=f.elements.service;
+  const f=$('#form'),
+        st=$('#status'),
+        sel=f.elements.service;
 
 
   /* =========================
-     SERVICE DATA
+     SERVICES
   ========================= */
 
   const S={
-
     dm:{
       t:'Digital Marketing',
       d:'One digital strategy that ties every channel to your business goals, so effort goes where it matters.',
@@ -152,7 +144,6 @@
         'Test ideas and refine campaigns based on results'
       ]
     }
-
   };
 
 
@@ -162,16 +153,12 @@
 
   const dlg=$('#svc');
 
-  document.querySelectorAll('.card[data-k]').forEach(c=>{
-
+  document.querySelectorAll('.card[data-k]').forEach(c=>
     c.addEventListener('click',()=>{
-
       const k=S[c.dataset.k];
 
       $('#svc-t').textContent=k.t;
-
       $('#svc-d').textContent=k.d;
-
       $('#svc-l').innerHTML=
         k.l.map(x=>'<li>'+x+'</li>').join('');
 
@@ -183,38 +170,17 @@
       );
 
       dlg.showModal();
-
-    });
-
-  });
-
-
-  /* =========================
-     CLOSE SERVICE POPUP
-  ========================= */
+    })
+  );
 
   dlg.addEventListener('click',e=>{
-
-    if(
-      e.target===dlg ||
-      e.target.closest('.x')
-    ){
+    if(e.target===dlg||e.target.closest('.x'))
       dlg.close();
-    }
-
   });
 
-
-  /* =========================
-     SERVICE → CONTACT FORM
-  ========================= */
-
   $('#svc-c').addEventListener('click',()=>{
-
     sel.value=dlg.dataset.s;
-
     dlg.close();
-
   });
 
 
@@ -223,7 +189,6 @@
   ========================= */
 
   const rules={
-
     name:v=>
       v.trim().length>1 ||
       'Enter your name.',
@@ -244,18 +209,15 @@
     message:v=>
       v.trim().length>=10 ||
       'Tell us a little more (10+ characters).'
-
   };
 
 
   const check=el=>{
-
     const r=rules[el.name];
 
     if(!r) return true;
 
     const ok=r(el.value);
-
     const s=el.parentNode.querySelector('small');
 
     el.setAttribute(
@@ -264,15 +226,14 @@
     );
 
     s.textContent=
-      ok===true ? '' : ok;
+      ok===true?'':ok;
 
     return ok===true;
-
   };
 
 
   /* =========================
-     VALIDATE ON FIELD EXIT
+     VALIDATE ON FOCUS OUT
   ========================= */
 
   f.addEventListener('focusout',e=>{
@@ -285,34 +246,21 @@
   ========================= */
 
   f.addEventListener('submit',async e=>{
-
     e.preventDefault();
 
+    /* Validate fields */
 
-    /* -------------------------
-       VALIDATE ALL FIELDS
-    ------------------------- */
-
-    const bad=[
-      ...f.elements
-    ].filter(el=>
-      el.name &&
-      !check(el)
+    const bad=[...f.elements].filter(
+      el=>el.name&&!check(el)
     );
 
-
     if(bad.length){
-
       bad[0].focus();
-
       return;
-
     }
 
 
-    /* -------------------------
-       HONEYPOT SPAM CHECK
-    ------------------------- */
+    /* Honeypot spam protection */
 
     const botcheck=f.elements.botcheck;
 
@@ -320,46 +268,42 @@
       botcheck &&
       botcheck.value.trim()!==''
     ){
-
       st.className='err';
-
       st.textContent=
         'Spam protection triggered. Please refresh and try again.';
-
       return;
-
     }
 
 
-    /* -------------------------
-       BUTTON STATE
-    ------------------------- */
+    /* Button */
 
     const btn=f.querySelector(
       'button[type="submit"]'
     );
 
-    btn.disabled=true;
+    const originalText=btn.textContent;
 
+    btn.disabled=true;
     btn.textContent='Sending...';
 
     st.className='';
-
     st.textContent='Sending...';
 
 
     try{
 
-      /* -------------------------
-         PREPARE FORM DATA
-      ------------------------- */
+      /*
+       * The access_key is already included
+       * inside the HTML form.
+       *
+       * Web3Forms receives the complete
+       * form data and sends the enquiry
+       * to the email associated with the
+       * access key.
+       */
 
       const formData=new FormData(f);
 
-
-      /* -------------------------
-         SEND TO WEB3FORMS
-      ------------------------- */
 
       const response=await fetch(
         'https://api.web3forms.com/submit',
@@ -370,86 +314,60 @@
       );
 
 
-      /* -------------------------
-         READ RESPONSE
-      ------------------------- */
+      const data=await response.json();
 
-      const result=await response.json();
-
-
-      /* -------------------------
-         DEBUG INFORMATION
-      ------------------------- */
 
       console.log(
-        'Web3Forms HTTP Status:',
-        response.status
-      );
-
-      console.log(
-        'Web3Forms Response:',
-        result
+        'Web3Forms response:',
+        data
       );
 
 
-      /* -------------------------
-         CHECK SUCCESS
-      ------------------------- */
+      /* Successful submission */
 
-      if(
-        !response.ok ||
-        !result.success
-      ){
+      if(data.success){
 
-        throw new Error(
-          result.message ||
-          'Web3Forms submission failed.'
-        );
+        f.reset();
+
+        st.className='ok';
+
+        st.textContent=
+          'Thank you. Your enquiry has been sent successfully.';
+
+      }
+
+      /* Web3Forms returned an error */
+
+      else{
+
+        st.className='err';
+
+        st.textContent=
+          'Error: '+
+          (data.message||'Unable to send your enquiry.');
 
       }
 
 
-      /* -------------------------
-         SUCCESS
-      ------------------------- */
-
-      f.reset();
-
-      st.className='ok';
-
-      st.textContent=
-        'Thank you. We will be in touch soon.';
-
-
     }catch(error){
 
-      /* -------------------------
-         ERROR
-      ------------------------- */
-
       console.error(
-        'Web3Forms Error:',
+        'Web3Forms error:',
         error
       );
-
 
       st.className='err';
 
       st.textContent=
-        'Error: ' +
-        error.message;
-
-    }finally{
-
-      /* -------------------------
-         RESTORE BUTTON
-      ------------------------- */
-
-      btn.disabled=false;
-
-      btn.textContent='Send Message';
+        'Unable to send your enquiry. Please try again.';
 
     }
+
+
+    /* Restore button */
+
+    btn.disabled=false;
+    btn.textContent=originalText;
 
   });
 
