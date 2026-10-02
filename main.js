@@ -1,48 +1,75 @@
 (()=>{
   document.documentElement.classList.add('js');
 
-  const $=s=>document.querySelector(s),
-        b=$('#burger'),
-        m=$('#menu');
+  /* =========================
+     NAVIGATION
+  ========================= */
+
+  const $=s=>document.querySelector(s);
+  const b=$('#burger');
+  const m=$('#menu');
 
   const close=()=>{
     m.classList.remove('open');
     b.setAttribute('aria-expanded','false');
-    b.setAttribute('aria-label','Open menu')
+    b.setAttribute('aria-label','Open menu');
   };
 
   b.addEventListener('click',()=>{
     const o=m.classList.toggle('open');
+
     b.setAttribute('aria-expanded',o);
-    b.setAttribute('aria-label',o?'Close menu':'Open menu')
+    b.setAttribute(
+      'aria-label',
+      o ? 'Close menu' : 'Open menu'
+    );
   });
 
   m.addEventListener('click',e=>{
-    if(e.target.closest('a'))close()
+    if(e.target.closest('a')) close();
   });
 
   addEventListener('keydown',e=>{
-    if(e.key==='Escape')close()
+    if(e.key==='Escape') close();
   });
 
-  const io='IntersectionObserver'in window
-    ?new IntersectionObserver(es=>es.forEach(e=>{
-        if(e.isIntersecting){
-          e.target.classList.add('in');
-          io.unobserve(e.target)
-        }
-      }),{threshold:.12})
-    :null;
 
-  document.querySelectorAll('.rv').forEach(el=>
-    io?io.observe(el):el.classList.add('in')
-  );
+  /* =========================
+     SCROLL ANIMATIONS
+  ========================= */
 
-  const f=$('#form'),
-        st=$('#status'),
-        sel=f.elements.service;
+  const io='IntersectionObserver' in window
+    ? new IntersectionObserver(
+        es=>es.forEach(e=>{
+          if(e.isIntersecting){
+            e.target.classList.add('in');
+            io.unobserve(e.target);
+          }
+        }),
+        {threshold:.12}
+      )
+    : null;
+
+  document.querySelectorAll('.rv').forEach(el=>{
+    io ? io.observe(el) : el.classList.add('in');
+  });
+
+
+  /* =========================
+     CONTACT FORM
+  ========================= */
+
+  const f=$('#form');
+  const st=$('#status');
+  const sel=f.elements.service;
+
+
+  /* =========================
+     SERVICE DATA
+  ========================= */
 
   const S={
+
     dm:{
       t:'Digital Marketing',
       d:'One digital strategy that ties every channel to your business goals, so effort goes where it matters.',
@@ -125,96 +152,216 @@
         'Test ideas and refine campaigns based on results'
       ]
     }
+
   };
+
+
+  /* =========================
+     SERVICE POPUP
+  ========================= */
 
   const dlg=$('#svc');
 
-  document.querySelectorAll('.card[data-k]').forEach(c=>
+  document.querySelectorAll('.card[data-k]').forEach(c=>{
+
     c.addEventListener('click',()=>{
+
       const k=S[c.dataset.k];
 
       $('#svc-t').textContent=k.t;
+
       $('#svc-d').textContent=k.d;
-      $('#svc-l').innerHTML=k.l.map(x=>'<li>'+x+'</li>').join('');
+
+      $('#svc-l').innerHTML=
+        k.l.map(x=>'<li>'+x+'</li>').join('');
 
       dlg.dataset.s=c.dataset.s;
+
       dlg.querySelector('use').setAttribute(
         'href',
         c.querySelector('use').getAttribute('href')
       );
 
-      dlg.showModal()
-    })
-  );
+      dlg.showModal();
+
+    });
+
+  });
+
+
+  /* =========================
+     CLOSE SERVICE POPUP
+  ========================= */
 
   dlg.addEventListener('click',e=>{
-    if(e.target===dlg||e.target.closest('.x'))dlg.close()
+
+    if(
+      e.target===dlg ||
+      e.target.closest('.x')
+    ){
+      dlg.close();
+    }
+
   });
+
+
+  /* =========================
+     SERVICE → CONTACT FORM
+  ========================= */
 
   $('#svc-c').addEventListener('click',()=>{
+
     sel.value=dlg.dataset.s;
-    dlg.close()
+
+    dlg.close();
+
   });
 
+
+  /* =========================
+     FORM VALIDATION
+  ========================= */
+
   const rules={
-    name:v=>v.trim().length>1||'Enter your name.',
-    email:v=>/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v)||'Enter a valid email address.',
-    phone:v=>!v||/^[+\d][\d\s()-]{6,17}$/.test(v)||'Enter a valid phone number.',
-    service:v=>!!v||'Choose a service.',
-    message:v=>v.trim().length>=10||'Tell us a little more (10+ characters).'
+
+    name:v=>
+      v.trim().length>1 ||
+      'Enter your name.',
+
+    email:v=>
+      /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v) ||
+      'Enter a valid email address.',
+
+    phone:v=>
+      v.trim().length>0 &&
+      /^[+\d][\d\s()-]{6,17}$/.test(v) ||
+      'Enter a valid phone number.',
+
+    service:v=>
+      !!v ||
+      'Choose a service.',
+
+    message:v=>
+      v.trim().length>=10 ||
+      'Tell us a little more (10+ characters).'
+
   };
+
 
   const check=el=>{
+
     const r=rules[el.name];
 
-    if(!r)return true;
+    if(!r) return true;
 
     const ok=r(el.value);
+
     const s=el.parentNode.querySelector('small');
 
-    el.setAttribute('aria-invalid',ok!==true);
-    s.textContent=ok===true?'':ok;
-
-    return ok===true
-  };
-
-  f.addEventListener('focusout',e=>check(e.target));
-
-  /*
-   * WEB3FORMS CONTACT FORM
-   */
-  f.addEventListener('submit',async e=>{
-    e.preventDefault();
-
-    const bad=[...f.elements].filter(
-      el=>el.name&&!check(el)
+    el.setAttribute(
+      'aria-invalid',
+      ok!==true
     );
 
+    s.textContent=
+      ok===true ? '' : ok;
+
+    return ok===true;
+
+  };
+
+
+  /* =========================
+     VALIDATE ON FIELD EXIT
+  ========================= */
+
+  f.addEventListener('focusout',e=>{
+    check(e.target);
+  });
+
+
+  /* =========================
+     WEB3FORMS SUBMISSION
+  ========================= */
+
+  f.addEventListener('submit',async e=>{
+
+    e.preventDefault();
+
+
+    /* -------------------------
+       VALIDATE ALL FIELDS
+    ------------------------- */
+
+    const bad=[
+      ...f.elements
+    ].filter(el=>
+      el.name &&
+      !check(el)
+    );
+
+
     if(bad.length){
+
       bad[0].focus();
-      return
+
+      return;
+
     }
 
-    /*
-     * Honeypot spam protection
-     */
+
+    /* -------------------------
+       HONEYPOT SPAM CHECK
+    ------------------------- */
+
     const botcheck=f.elements.botcheck;
 
-    if(botcheck && botcheck.value.trim()!==''){
-      return
+    if(
+      botcheck &&
+      botcheck.value.trim()!==''
+    ){
+
+      st.className='err';
+
+      st.textContent=
+        'Spam protection triggered. Please refresh and try again.';
+
+      return;
+
     }
 
-    const btn=f.querySelector('button');
+
+    /* -------------------------
+       BUTTON STATE
+    ------------------------- */
+
+    const btn=f.querySelector(
+      'button[type="submit"]'
+    );
 
     btn.disabled=true;
+
+    btn.textContent='Sending...';
+
     st.className='';
+
     st.textContent='Sending...';
+
 
     try{
 
+      /* -------------------------
+         PREPARE FORM DATA
+      ------------------------- */
+
       const formData=new FormData(f);
 
-      const r=await fetch(
+
+      /* -------------------------
+         SEND TO WEB3FORMS
+      ------------------------- */
+
+      const response=await fetch(
         'https://api.web3forms.com/submit',
         {
           method:'POST',
@@ -222,28 +369,88 @@
         }
       );
 
-      const j=await r.json();
 
-      if(!r.ok || !j.success){
-        throw new Error('Submission failed');
+      /* -------------------------
+         READ RESPONSE
+      ------------------------- */
+
+      const result=await response.json();
+
+
+      /* -------------------------
+         DEBUG INFORMATION
+      ------------------------- */
+
+      console.log(
+        'Web3Forms HTTP Status:',
+        response.status
+      );
+
+      console.log(
+        'Web3Forms Response:',
+        result
+      );
+
+
+      /* -------------------------
+         CHECK SUCCESS
+      ------------------------- */
+
+      if(
+        !response.ok ||
+        !result.success
+      ){
+
+        throw new Error(
+          result.message ||
+          'Web3Forms submission failed.'
+        );
+
       }
+
+
+      /* -------------------------
+         SUCCESS
+      ------------------------- */
 
       f.reset();
 
       st.className='ok';
-      st.textContent='Thank you. We will be in touch soon.';
+
+      st.textContent=
+        'Thank you. We will be in touch soon.';
+
 
     }catch(error){
 
+      /* -------------------------
+         ERROR
+      ------------------------- */
+
+      console.error(
+        'Web3Forms Error:',
+        error
+      );
+
+
       st.className='err';
+
       st.textContent=
-        'Could not send. Please email info@askpirant.com instead.';
+        'Error: ' +
+        error.message;
 
     }finally{
 
+      /* -------------------------
+         RESTORE BUTTON
+      ------------------------- */
+
       btn.disabled=false;
 
+      btn.textContent='Send Message';
+
     }
+
   });
 
 })();
