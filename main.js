@@ -62,89 +62,34 @@
   ========================= */
 
   const S={
-    dm:{
-      t:'Digital Marketing',
-      d:'One digital strategy that ties every channel to your business goals, so effort goes where it matters.',
-      l:[
-        'Review your current presence, audience and competitors',
-        'Build a channel plan with clear priorities and targets',
-        'Coordinate campaigns, content and tracking in a single plan'
-      ]
-    },
-
-    seo:{
-      t:'SEO',
-      d:'Search optimization that helps the right customers find you when they are actively looking.',
-      l:[
-        'Review your site technically and on each page',
-        'Plan keywords and content around what your buyers search for',
-        'Set up local search visibility for location-based businesses',
-        'Report on traffic and rankings so progress is clear'
-      ]
-    },
-
-    pm:{
-      t:'Performance Marketing',
-      d:'Paid campaigns on Meta, Google and other platforms, built so every rupee can be measured.',
-      l:[
-        'Set goals and conversion tracking before any spend',
-        'Test audiences, creatives and offers',
-        'Adjust budgets based on cost per lead and return',
-        'Report in plain language on what the spend achieved'
-      ]
-    },
-
-    sm:{
-      t:'Social Media Management',
-      d:'A consistent presence that builds recognition and trust with your audience.',
-      l:[
-        'Plan a content calendar in your brand voice',
-        'Create, schedule and publish posts across your platforms',
-        'Handle community replies and engagement',
-        'Review what works each month and refine the plan'
-      ]
-    },
-
-    cs:{
-      t:'Content Strategy',
-      d:'Content that answers real questions and moves people toward taking action.',
-      l:[
-        'Define your audience, topics and key messages',
-        'Plan formats across your website, social and email',
-        'Connect content to search visibility and business goals'
-      ]
-    },
-
-    wd:{
-      t:'Website Development',
-      d:'A fast, mobile-friendly website designed to turn visitors into enquiries.',
-      l:[
-        'Plan structure and messaging around your objectives',
-        'Design and build responsive, fast-loading pages',
-        'Set up forms, analytics and SEO foundations at launch'
-      ]
-    },
-
-    bs:{
-      t:'Brand Strategy',
-      d:'A clear, consistent identity everywhere customers meet your business.',
-      l:[
-        'Clarify your positioning, audience and voice',
-        'Align visuals and messaging across channels',
-        'Create simple guidelines so your team stays consistent'
-      ]
-    },
-
-    an:{
-      t:'Analytics & Optimization',
-      d:'Turn numbers into decisions, and keep improving what you run.',
-      l:[
-        'Set up tracking for traffic, leads and conversions',
-        'Build simple reports around the metrics that matter',
-        'Test ideas and refine campaigns based on results'
-      ]
-    }
+    dm:{t:'Digital Marketing',d:'An integrated digital strategy that connects your channels to your business goals.',l:['Review your current presence, audience and competitors','Build a channel plan with clear priorities and targets','Coordinate campaigns and content around agreed objectives']},
+    meta:{t:'Meta Ads',d:'Paid campaigns designed to reach relevant audiences across Meta platforms.',l:['Define campaign objectives and target audiences','Test creative, messaging and audience approaches','Review campaign delivery and optimize based on performance']},
+    google:{t:'Google Ads',d:'Search and paid media campaigns that help you connect with people looking for your products or services.',l:['Structure campaigns around relevant search intent','Align ad messaging and landing pages','Review results and refine targeting and spend']},
+    seo:{t:'SEO & GEO',d:'Improve how your business is discovered through search engines and AI-driven discovery experiences.',l:['Review technical and on-page search foundations','Organize content around useful customer questions','Strengthen local visibility and clear business information']},
+    video:{t:'Videography',d:'Planned video capture for brand stories, products, campaigns and social content.',l:['Plan the shoot around your content goals','Capture footage with appropriate camera, lighting and audio','Prepare footage for the editing workflow']},
+    editing:{t:'Video Editing',d:'Turn raw footage into polished, platform-ready video content.',l:['Edit footage for pacing, clarity and story','Add suitable titles, motion elements and finishing','Prepare exports for the intended platforms']}
   };
+
+
+  /* =========================
+     SERVICES / GEAR TABS
+  ========================= */
+
+  const servicesTab=$('#services-tab'), gearTab=$('#gear-tab'),
+        servicesPanel=$('#services-panel'), gearPanel=$('#gear-panel');
+
+  const selectPanel=(showGear)=>{
+    servicesTab.setAttribute('aria-selected',String(!showGear));
+    gearTab.setAttribute('aria-selected',String(showGear));
+    servicesTab.classList.toggle('btn-gold',!showGear);
+    servicesTab.classList.toggle('btn-ghost',showGear);
+    gearTab.classList.toggle('btn-gold',showGear);
+    gearTab.classList.toggle('btn-ghost',!showGear);
+    servicesPanel.hidden=showGear;
+    gearPanel.hidden=!showGear;
+  };
+  servicesTab.addEventListener('click',()=>selectPanel(false));
+  gearTab.addEventListener('click',()=>selectPanel(true));
 
 
   /* =========================
