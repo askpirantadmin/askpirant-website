@@ -73,7 +73,7 @@
     },
 
     seo:{
-      t:'SEO',
+      t:'SEO & GEO',
       d:'Search optimization that helps the right customers find you when they are actively looking.',
       l:[
         'Review your site technically and on each page',
@@ -83,65 +83,44 @@
       ]
     },
 
-    pm:{
-      t:'Performance Marketing',
-      d:'Paid campaigns on Meta, Google and other platforms, built so every rupee can be measured.',
+    mt:{
+      t:'Meta Ads',
+      d:'Paid campaigns on Meta platforms, built so results can be measured.',
       l:[
         'Set goals and conversion tracking before any spend',
         'Test audiences, creatives and offers',
-        'Adjust budgets based on cost per lead and return',
-        'Report in plain language on what the spend achieved'
+        'Adjust budgets based on results'
       ]
     },
 
-    sm:{
-      t:'Social Media Management',
-      d:'A consistent presence that builds recognition and trust with your audience.',
+    go:{
+      t:'Google Ads',
+      d:'Paid campaigns on Google, built so results can be measured.',
       l:[
-        'Plan a content calendar in your brand voice',
-        'Create, schedule and publish posts across your platforms',
-        'Handle community replies and engagement',
-        'Review what works each month and refine the plan'
+        'Set goals and conversion tracking before any spend',
+        'Test keywords, audiences and ad copy',
+        'Adjust budgets based on results'
       ]
     },
 
-    cs:{
-      t:'Content Strategy',
-      d:'Content that answers real questions and moves people toward taking action.',
+    vg:{
+      t:'Videography',
+      d:'Video shoots for interviews, portraits and on-location coverage.',
       l:[
-        'Define your audience, topics and key messages',
-        'Plan formats across your website, social and email',
-        'Connect content to search visibility and business goals'
+        'Run-and-gun coverage on location',
+        'Interview and portrait setups with controlled lighting',
+        'Clean wireless audio on location'
       ]
     },
 
-    wd:{
-      t:'Website Development',
-      d:'A fast, mobile-friendly website designed to turn visitors into enquiries.',
+    ve:{
+      t:'Video Editing',
+      d:'Editing, motion graphics and colour grading for a consistent finish.',
       l:[
-        'Plan structure and messaging around your objectives',
-        'Design and build responsive, fast-loading pages',
-        'Set up forms, analytics and SEO foundations at launch'
-      ]
-    },
-
-    bs:{
-      t:'Brand Strategy',
-      d:'A clear, consistent identity everywhere customers meet your business.',
-      l:[
-        'Clarify your positioning, audience and voice',
-        'Align visuals and messaging across channels',
-        'Create simple guidelines so your team stays consistent'
-      ]
-    },
-
-    an:{
-      t:'Analytics & Optimization',
-      d:'Turn numbers into decisions, and keep improving what you run.',
-      l:[
-        'Set up tracking for traffic, leads and conversions',
-        'Build simple reports around the metrics that matter',
-        'Test ideas and refine campaigns based on results'
+        'Cuts and pacing in Adobe Premiere Pro',
+        'Motion graphics, titles and effects in After Effects',
+        'Colour correction and grading in DaVinci Resolve',
+        'Platform-ready exports'
       ]
     }
   };

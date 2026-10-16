@@ -113,3 +113,9 @@ dialog .btn{margin-top:.6rem}
 .card {
   border-color: rgba(255, 255, 255, 0.18);
 }
+
+.gear{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:1.2rem}
+.gi{display:grid;gap:.6rem;align-content:start;padding:1.8rem;border:1px solid #d9d6cc;border-radius:var(--r);transition:border-color .3s,background .3s}
+.gi:hover{border-color:var(--gold);background:#fbf6e4}
+.gi em{font:800 .75rem var(--h);font-style:normal;letter-spacing:.14em;text-transform:uppercase;color:#8a6d12}
+.sw-h{font-size:clamp(1.5rem,3vw,2.2rem);margin:clamp(3rem,6vw,4.5rem) 0 1.6rem}
